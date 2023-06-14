@@ -1,21 +1,20 @@
 <?php
-$numero =readline("Ingrese un numero");
-
-if(esPrimo($numero)){
-    echo 'Es primo';
-}else{
-    echo 'No es primo';
-}
-function esPrimo($numero)
-{
-    if(!is_numeric($numero))
-        return false;
-    for ($i = 2; $i < $numero; $i++) {
-        if ($numero % $i == 0) {
-        
-            return false;
+$num = intval(readline("Ingrese un numero "));
+    $res = 0;
+    for ($i = 2; $i < $num; $i++) {
+        if ($num % $i != 0) {
+        } else {
+            $res = $res + 10;
         }
     }
-    return true;
-}
-?>
+
+if ($num == 1) {
+        echo "El dato ingresado no es valido. ";
+    } elseif ($num > 1) {
+        if ($res > 0) {
+            echo "No es un numero primo";
+        } elseif ($res== 0) {
+            echo "Es un numero primo";
+        }
+    }
+    ?>

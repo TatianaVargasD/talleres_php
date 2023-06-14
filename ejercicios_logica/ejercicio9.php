@@ -1,18 +1,14 @@
 <?php
-$usuario=readline("Ingrese un numero ");
-function generarFibonacci($num){
-    $lista=[];
-$lista[0]=0;
-$lista[1]=1;
-for ($i=2; $i <$num; $i++) { 
-    $lista[$i] = $lista[$i-1] + $lista[$i-2];
+$usuario = readline("Bienvenido(a) ingrese un numero ");
+$num1 = 0;
+$num2 = 1;
+$res = "$num1$num2";
+while (($num1 + $num2) <= $usuario) {
+    $num3 = $num1 + $num2;
+    $res= "$num3";
+    $num1 = $num2;
+    $num2 = $num3;
 }
-return$lista;
-}
-$secuencia=generarFibonacci($usuario);
+echo "La secuencia del fibonacci del numero ingresado es ".$res;
 
-echo generarFibonacci($secuencia);
-foreach($secuencia as $num){
-    echo $num;
-}
 ?>

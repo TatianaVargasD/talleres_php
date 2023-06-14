@@ -1,16 +1,12 @@
 <?php
-function invertirNumero($numero) {
-    $numeroInvertido = 0;
-    
-    while ($numero > 0) {
-        $resto = $numero % 10;
-        $numeroInvertido = ($numeroInvertido * 10) + $resto;
-        $numero = (int)($numero / 10);
-    }
-    return $numeroInvertido;
+$usuario = readline("Escriba el número el cual desea invertir: ");
+$num = (string) $usuario;
+$resp = "";
+
+
+for ($i = strlen($num) - 1; $i >= 0; $i--) {
+    $resp .= $num[$i];
 }
-$numeroUsuario = (int)readline("Ingrese un número: ");
-$numeroInvertido = invertirNumero($numeroUsuario);
-echo "El número invertido es: " . $numeroInvertido;
+echo "El numero invertido es: " . (int) $resp . "\n";
 
 ?>

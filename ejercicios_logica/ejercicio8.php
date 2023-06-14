@@ -1,32 +1,21 @@
 <?php
+$num1 = readline("Ingrese el número inicial ");
+$num2 = readline("Ingrese el rango final  ");
 
-function Numero1($numero) {
-    $suma = 0;
-    for ($i = 1; $i < $numero; $i++) {
-        if ($numero % $i == 0) {
-            $suma += $i;
+echo "El número perfecto que se encontró fue ";
+
+for ($i = $num1; $i <= $num2; $i++) {
+    $res = 0;
+    
+    for ($x = 1; $x <= ($i / 2); $x++) {
+        if ($i % $x == 0) {
+            $res = $res +$x;
         }
     }
-    return $suma == $numero;
-}
-
-function encontrar($inicio, $fin) {
-    $numerosP = [];
-    for ($numero = $inicio; $numero <= $fin; $numero++) {
-        if (Numero1($numero)) {
-            $numerosP[] = $numero;
-        }
+    
+    if ($res == $i) {
+        echo $i . " ";
     }
-    return $numerosP;
 }
 
-$rangoInicio = readline("Ingrese el inicio del rango: ");
-$rangoFin = readline("Ingrese el fin del rango: ");
-
-$numerosP = encontrar($rangoInicio, $rangoFin);
-
-echo "Los números perfectos en el rango de $rangoInicio a $rangoFin son:\n";
-foreach ($numerosP as $num) {
-    echo $num . "\n";
-}
 ?>

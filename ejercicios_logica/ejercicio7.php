@@ -1,21 +1,15 @@
 <?php
-
-function buscarElemento($lista, $elemento) {
-    foreach ($lista as $posicion => $valor) {
-        if ($valor === $elemento) {
-            return $posicion;
-        }
+$usuario = readline("Ingrese una lista de datos separelos por coma y no deje espacios por favor ");
+$num= explode(",", $usuario);
+$busqueda = readline("Escriba el  dato que desea buscar en la lista anterior ");
+$var = -1;
+for ($i = 0; $i < count($num); $i++) {
+ if ($busqueda == $num[$i]) {
+        $var += $i + 1;
     }
-    
-    return -1;
 }
-$listaUsuario = readline("Ingrese la lista de elementos separados por comas: ");
-$elementos = explode(",", $listaUsuario);
-$elementoBuscar = readline("Ingrese el elemento a buscar: ");
-$posicion = buscarElemento($elementos, $elementoBuscar);
-if ($posicion !== -1) {
-    echo "El elemento se encuentra en la posición: " . $posicion;
-} else {
-    echo "El elemento no se encuentra en la lista.";
-}
-?>
+
+
+echo "El dato $busqueda se encuentra en la posicion $var.";
+
+
