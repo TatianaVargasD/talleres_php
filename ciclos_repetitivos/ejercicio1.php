@@ -1,0 +1,9 @@
+<?php
+$num=-10;
+while ($num <= 20) {
+    echo ($num ."\n");
+    $num=$num+1;
+    
+}
+
+?>
